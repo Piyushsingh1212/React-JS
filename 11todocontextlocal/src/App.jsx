@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    <h1>Context local storage</h1>
+    <h1>Context local stor</h1>
     
     </>
   )
