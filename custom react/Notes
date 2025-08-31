@@ -1,0 +1,124 @@
+function customRender(reactElement, mainContainer) {
+    /*
+    const domElement = document.createElement(reactElement.type)
+    domElement.innerHTML = reactElement.children
+    domElement.setAttribute('href', reactElement.props.href)
+    domElement.setAttribute('target', reactElement.props.target)
+    mainContainer.appendChild(domElement)
+    console.log(domElement)
+    */  
+    const domElement = document.createElement(reactElement.type)
+    domElement.innerHTML = reactElement.children
+    for (const prop in reactElement.props)
+    {
+        if (prom === children) continue;
+        domElement.setAttribute('prop',reactElement.props[prop]);
+    }
+    mainContainer.appendChild(domElement)
+
+
+}
+
+const reactElement = {
+    type: 'a',
+    props: {
+        href: 'https://www.google.com',
+        target: '_blank'
+    },
+    children: 'click me to visit  googlee'
+}
+let mainContainer = document.querySelector('#root')
+
+customRender(reactElement, mainContainer)
+
+//main.jsx(vitereact)
+
+import { StrictMode } from 'react'
+import React from 'react'
+
+import ReactDOM from 'react-dom/client'
+
+import App from './App.jsx'
+
+function MyApp() {
+  return(
+    <div>
+      <h1>Custom app</h1>
+    </div>
+  )
+}
+
+const anotherElement = "chai aur react";
+
+const reactElementone = React.createElement(
+  'a',
+  { href: 'https://google.com', target: '_blank' },
+  'click me to visit google',
+  anotherElement
+)
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  
+ 
+  reactElementone
+  
+)
+
+//chai.jsx
+function Chai () {
+    const username='piyushsingh__06';
+    return (
+        <>
+        <h3>chai is ready</h3>
+        <p>chai is a testing library</p>
+        <p>the username is {username}</p>
+        </>
+
+    )
+
+}
+
+export default Chai;
+
+
+//counter value Projects (use of hooks)
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import { use } from 'react'
+
+function App() {
+
+  let [Counter,setCounter] = useState(15)
+
+  //let Counter = 5;
+
+  const addValue = () => {
+    console.log("clicked" , Counter);
+    setCounter(Counter +1)
+  }
+
+  const removeValue = () => {
+    setCounter(Counter-1);
+  }
+
+  return (
+    <>
+    <h1>chai aur react</h1>
+    <h2>Counter value : {Counter}</h2>
+
+    <button
+    onClick={addValue
+    }>Add value</button>
+    <br/>
+    <button 
+    onClick={removeValue}>Remove value</button>
+    </>
+  )
+}
+
+export default App
+
+
